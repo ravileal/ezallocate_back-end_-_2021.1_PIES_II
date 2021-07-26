@@ -2,19 +2,37 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable @typescript-eslint/comma-dangle */
 /* eslint-disable @typescript-eslint/quotes */
-const {
-  BDConnection /* SalaRepository */,
-} = require("../domain/repository/mysql");
+const { BDConnection, SalaRepository } = require("../domain/repository/mysql");
 const salaRouter = require("./router/sala-router");
 const salaCtrl = require("./controller/SalaController");
-const { SalaRepository } = require("../domain/repository/mysql");
+
+const setExpressRoute = (app, route, controller) =>
+  app[route.method](route.path, controller[route.action]);
+
+const configureRoutes = ({
+  app,
+  routers,
+  controller,
+  repository: Repository,
+}) => {
+  controller.setRepository(new Repository());
+  routers.forEach((route) => setExpressRoute(app, route, controller));
+};
+
+const setConfiguration = (app, configuration) => {
+  configuration.forEach((config) => configureRoutes({ app, ...config }));
+};
 
 module.exports = async (app) => {
   await BDConnection.start();
 
-  salaCtrl.setRepository(new SalaRepository());
+  const configuration = [
+    {
+      routers: salaRouter,
+      controller: salaCtrl,
+      repository: SalaRepository,
+    },
+  ];
 
-  salaRouter.map((route) =>
-    app[route.method](route.path, salaCtrl[route.action])
-  );
+  setConfiguration(app, configuration);
 };
