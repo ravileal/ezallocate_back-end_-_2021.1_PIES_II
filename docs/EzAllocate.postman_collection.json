@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "af04b78d-3455-4f1e-a2be-6dd7e2e17613",
+		"name": "EzAllocate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Salas",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"asd\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"arCondicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomadaRede\" : 10,\r\n    \"tomadaEnergia\" : 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/salas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"salas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"asd\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"arCondicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomadaRede\" : 10,\r\n    \"tomadaEnergia\" : 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/salas",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"salas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"asd\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"arCondicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomadaRede\" : 10,\r\n    \"tomadaEnergia\" : 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/salas/9cd5f683-7f2c-4f37-a797-0e8c08b08744",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"salas",
+								"9cd5f683-7f2c-4f37-a797-0e8c08b08744"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"e8a2afbe-1bb0-4050-b98a-6696d9f8c72f\",\r\n    \"nome\": \"nova sala 2\",\r\n    \"bloco\": \"Bloco 1\",\r\n    \"arCondicionado\": true,\r\n    \"projetor\": true,\r\n    \"roteador\": true,\r\n    \"bloqueado\": false,\r\n    \"computadores\": 10,\r\n    \"capacidade\": 10,\r\n    \"tomadaRede\": 10,\r\n    \"tomadaEnergia\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/salas/9cd5f683-7f2c-4f37-a797-0e8c08b08744",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"salas",
+								"9cd5f683-7f2c-4f37-a797-0e8c08b08744"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"e8a2afbe-1bb0-4050-b98a-6696d9f8c72f\",\r\n    \"nome\": \"nova sala\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"arCondicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomadaRede\" : 10,\r\n    \"tomadaEnergia\" : 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/salas/9cd5f683-7f2c-4f37-a797-0e8c08b08744",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"salas",
+								"9cd5f683-7f2c-4f37-a797-0e8c08b08744"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000"
+		}
+	]
+}
