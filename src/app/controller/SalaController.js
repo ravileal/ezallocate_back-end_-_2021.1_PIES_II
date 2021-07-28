@@ -39,8 +39,8 @@ const getSalaByNome = async ({ params }, res) => {
   res.send(result);
 };
 
-const updateSala = async ({ body }, res) => {
-  const entity = body;
+const updateSala = async ({ params, body }, res) => {
+  const entity = { ...body, ...params };
   const result = await new UpdateSala(repositorio).execute(entity);
   res.send(result);
 };
