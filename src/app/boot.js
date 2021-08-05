@@ -2,9 +2,18 @@
 /* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable @typescript-eslint/comma-dangle */
 /* eslint-disable @typescript-eslint/quotes */
-const { BDConnection, SalaRepository } = require("../domain/repository/mysql");
-const salaRouter = require("./router/sala-router");
-const salaCtrl = require("./controller/SalaController");
+const {
+  BDConnection,
+  SalaRepository,
+  OcupacaoRepository,
+  HorarioRepository,
+} = require("../domain/repository/mysql");
+const { salaRouter, horarioRouter, ocupacaoRouter } = require("./router");
+const {
+  SalaController,
+  OcupacaoController,
+  HorarioController,
+} = require("./controller");
 
 const setExpressRoute = (app, route, controller) =>
   app[route.method](route.path, controller[route.action]);
@@ -19,20 +28,29 @@ const configureRoutes = ({
   routers.forEach((route) => setExpressRoute(app, route, controller));
 };
 
-const setConfiguration = (app, configuration) => {
-  configuration.forEach((config) => configureRoutes({ app, ...config }));
+const setConfiguration = (app, configs) => {
+  configs.forEach((config) => configureRoutes({ app, ...config }));
 };
+
+const configuration = [
+  {
+    routers: salaRouter,
+    controller: SalaController,
+    repository: SalaRepository,
+  },
+  {
+    routers: ocupacaoRouter,
+    controller: OcupacaoController,
+    repository: OcupacaoRepository,
+  },
+  {
+    routers: horarioRouter,
+    controller: HorarioController,
+    repository: HorarioRepository,
+  },
+];
 
 module.exports = async (app) => {
   await BDConnection.start();
-
-  const configuration = [
-    {
-      routers: salaRouter,
-      controller: salaCtrl,
-      repository: SalaRepository,
-    },
-  ];
-
   setConfiguration(app, configuration);
 };
