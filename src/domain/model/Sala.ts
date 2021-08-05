@@ -1,10 +1,9 @@
 import {
-  Entity, PrimaryColumn, Generated, Column,
+  Entity, PrimaryColumn, Generated, Column, OneToMany
 } from 'typeorm';
 import Base from './Base';
+import Horario from './Horario';
 
-// The property "name" sets the table name. This is usually implied from the
-// class name, however this can be overridden if needed.
 @Entity({ name: 'sala' })
 export default class Sala implements Base {
   constructor(payload: any) {
@@ -19,39 +18,43 @@ export default class Sala implements Base {
     this.capacidade = payload.capacidade;
     this.tomadaRede = payload.tomadaRede;
     this.tomadaEnergia = payload.tomadaEnergia;
+    this.horario = payload.horario;
   }
 
-  @PrimaryColumn('text')
+  @PrimaryColumn('uuid')
   @Generated('uuid')
   id!: string;
 
-  @Column({ type: 'text' })
+  @Column({ type: 'text', nullable: false, })
   nome!: string;
 
-  @Column({ type: 'text' })
+  @Column({ type: 'text', nullable: false })
   bloco!: string;
 
-  @Column('boolean')
+  @Column({ type:'boolean', default: false })
   arCondicionado!: boolean;
 
-  @Column('boolean')
+  @Column({ type:'boolean', default: false })
   projetor!: boolean;
 
-  @Column('boolean')
+  @Column({ type:'boolean', default: false })
   roteador!: boolean;
 
-  @Column('boolean')
-  bloqueado!: boolean;
+  @Column({ type:'boolean', default: false })
+  bloqueado: boolean;
 
-  @Column('int')
-  computadores!: number;
+  @Column({ type:'int', default: 0 })
+  computadores: number;
 
-  @Column('int')
-  capacidade!: number;
+  @Column({ type:'int', default: 0 })
+  capacidade: number;
 
-  @Column('int')
-  tomadaRede!: number;
+  @Column({ type:'int', default: 0 })
+  tomadaRede: number;
 
-  @Column('int')
-  tomadaEnergia!: number;
+  @Column({ type:'int', default: 0 })
+  tomadaEnergia: number;
+
+  @OneToMany(() => Horario, horario => horario.sala)
+  horario: Horario[];
 }
