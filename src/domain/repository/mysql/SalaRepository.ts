@@ -7,7 +7,10 @@ export default class SalaRepository extends BaseRepository<Sala> {
   }
 
   findByNome(nome: string) {
-    console.log(`dentro do respository ${nome}`);
     return this.repository.find({ nome });
+  }
+
+  findByBloco(bloco: string) {
+    return this.repository.find({ bloco });
   }
 }

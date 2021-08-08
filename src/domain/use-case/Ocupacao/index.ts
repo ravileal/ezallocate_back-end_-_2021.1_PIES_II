@@ -3,7 +3,8 @@ import DeleteOcupacao from './DeleteOcupacao';
 import UpdateOcupacao from './UpdateOcupacao';
 import FindAllOcupacoes from './FindAllOcupacoes';
 import FindByIdOcupacao from './FindByIdOcupacao';
-// import FindByNomeOcupacao from './FindByNomeOcupacao';
+import FindByIdSalaOcupacao from './FindByIdSalaOcupacao';
+import FindByIdSalaDayOcupacao from './FindByIdSalaDayOcupacao';
 
 export {
   CreateOcupacao,
@@ -11,5 +12,6 @@ export {
   UpdateOcupacao,
   FindAllOcupacoes,
   FindByIdOcupacao,
-  // FindByNomeOcupacao,
+  FindByIdSalaOcupacao,
+  FindByIdSalaDayOcupacao,
 };

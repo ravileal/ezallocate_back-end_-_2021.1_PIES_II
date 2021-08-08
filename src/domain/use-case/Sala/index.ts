@@ -4,6 +4,7 @@ import UpdateSala from './UpdateSala';
 import FindAllSalas from './FindAllSala';
 import FindByIdSala from './FindByIdSala';
 import FindByNomeSala from './FindByNomeSala';
+import FindByBloco from './FindByBloco';
 
 export {
   CreateSala,
@@ -11,5 +12,6 @@ export {
   UpdateSala,
   FindAllSalas,
   FindByIdSala,
+  FindByBloco,
   FindByNomeSala,
 };

@@ -19,6 +19,12 @@ module.exports = [
     description: "Busca de sala por id",
   },
   {
+    path: "/salas/bloco/:name",
+    method: "get",
+    action: "getSalaByBloco",
+    description: "Busca de sala por nome de bloco",
+  },
+  {
     path: "/salas/:id",
     method: "put",
     action: "updateSala",

@@ -6,14 +6,9 @@ const {
   BDConnection,
   SalaRepository,
   OcupacaoRepository,
-  HorarioRepository,
 } = require("../domain/repository/mysql");
-const { salaRouter, horarioRouter, ocupacaoRouter } = require("./router");
-const {
-  SalaController,
-  OcupacaoController,
-  HorarioController,
-} = require("./controller");
+const { salaRouter, ocupacaoRouter } = require("./router");
+const { SalaController, OcupacaoController } = require("./controller");
 
 const setExpressRoute = (app, route, controller) =>
   app[route.method](route.path, controller[route.action]);
@@ -42,11 +37,6 @@ const configuration = [
     routers: ocupacaoRouter,
     controller: OcupacaoController,
     repository: OcupacaoRepository,
-  },
-  {
-    routers: horarioRouter,
-    controller: HorarioController,
-    repository: HorarioRepository,
   },
 ];
 

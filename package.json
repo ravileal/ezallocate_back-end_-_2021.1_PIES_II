@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "dev": "nodemon",
     "build": "rimraf ./build && tsc",
     "start": "npm run build && node build/index.js"
@@ -41,6 +42,7 @@
     "@types/uuid": "^8.3.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "moment": "^2.29.1",
     "mysql2": "^2.1.0",
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.0-rc.21",

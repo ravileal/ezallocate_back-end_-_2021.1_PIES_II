@@ -4,7 +4,8 @@ const {
   DeleteOcupacao,
   FindAllOcupacoes,
   FindByIdOcupacao,
-  // FindByNomeOcupacao,
+  FindByIdSalaOcupacao,
+  FindByIdSalaDayOcupacao,
   UpdateOcupacao,
 } = require("../../domain/use-case/Ocupacao");
 
@@ -34,10 +35,16 @@ const getOcupacaoById = async ({ params }, res) => {
   res.send(result);
 };
 
-// const getOcupacaoByNome = async ({ params }, res) => {
-//   const result = await new FindByNomeOcupacao(repositorio).execute(params);
-//   res.send(result);
-// };
+const getOcupacaoByIdSala = async ({ params, query }, res) => {
+  const haveQuery = Object.keys(query).length > 0;
+  const args = haveQuery ? { ...params, ...query } : params;
+  const action = haveQuery
+    ? new FindByIdSalaDayOcupacao(repositorio)
+    : new FindByIdSalaOcupacao(repositorio);
+  const result = await action.execute(args);
+
+  res.send(result);
+};
 
 const updateOcupacao = async ({ params, body }, res) => {
   const entity = { ...body, ...params };
@@ -56,6 +63,6 @@ module.exports = {
   updateOcupacao,
   deleteOcupacao,
   getOcupacaoById,
-  // getOcupacaoByNome,
+  getOcupacaoByIdSala,
   setRepository,
 };

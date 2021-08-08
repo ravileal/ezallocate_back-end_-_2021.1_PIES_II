@@ -3,6 +3,7 @@ const {
   CreateSala,
   DeleteSala,
   FindAllSalas,
+  FindByBloco,
   FindByIdSala,
   FindByNomeSala,
   UpdateSala,
@@ -39,6 +40,11 @@ const getSalaByNome = async ({ params }, res) => {
   res.send(result);
 };
 
+const getSalaByBloco = async ({ params }, res) => {
+  const result = await new FindByBloco(repositorio).execute(params);
+  res.send(result);
+};
+
 const updateSala = async ({ params, body }, res) => {
   const entity = { ...body, ...params };
   const result = await new UpdateSala(repositorio).execute(entity);
@@ -57,5 +63,6 @@ module.exports = {
   deleteSala,
   getSalaById,
   getSalaByNome,
+  getSalaByBloco,
   setRepository,
 };

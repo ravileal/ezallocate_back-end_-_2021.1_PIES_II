@@ -2,8 +2,9 @@ import {
   EntityTarget, Repository,
 } from 'typeorm';
 import BDConnection from './BDConnection';
+import Base from '../../model/Base';
 
-export default class BaseRepository<T> {
+export default class BaseRepository<T extends Base> {
   protected repository: Repository<T>;
 
   constructor(target: EntityTarget<T>) {

@@ -10,13 +10,19 @@ module.exports = [
     path: "/ocupacoes",
     method: "get",
     action: "getOcupacao",
-    description: "Busca de todos os ocupacoes",
+    description: "Busca de todos as ocupacoes",
   },
   {
     path: "/ocupacoes/:id",
     method: "get",
     action: "getOcupacaoById",
     description: "Busca de ocupacao por id",
+  },
+  {
+    path: "/ocupacoes/sala/:id",
+    method: "get",
+    action: "getOcupacaoByIdSala",
+    description: "Busca de todos as ocupacoes por id de sala",
   },
   {
     path: "/ocupacoes/:id",
