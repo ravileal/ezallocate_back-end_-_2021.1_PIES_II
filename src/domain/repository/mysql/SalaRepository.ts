@@ -11,6 +11,6 @@ export default class SalaRepository extends BaseRepository<Sala> {
   }
 
   findByBloco(bloco: string) {
-    return this.repository.find({ bloco });
+    return this.repository.find({ where : { bloco }, order : { nome : 'ASC' } });
   }
 }
