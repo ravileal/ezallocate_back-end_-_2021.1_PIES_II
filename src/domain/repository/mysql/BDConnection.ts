@@ -21,7 +21,7 @@ export default class BDConnection {
       synchronize: true,
       logging: false,
       entities: ['src/domain/model/**.ts'],
-      migrations: ['src/domain/migrations/*.ts'],
+      migrations: ['src/domain/repository/migrations/*.ts'],
     });
     console.log(`Connected to ${process.env.DB_HOST}:${process.env.DB_PORT}...`);
   }
