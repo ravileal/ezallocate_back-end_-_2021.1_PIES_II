@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"asd\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"arCondicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomadaRede\" : 10,\r\n    \"tomadaEnergia\" : 10\r\n}",
+							"raw": "{\r\n    \"nome\": \"asd\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"ar_condicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomada_rede\" : 10,\r\n    \"tomada_energia\" : 10\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -44,7 +44,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"asd\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"arCondicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomadaRede\" : 10,\r\n    \"tomadaEnergia\" : 10\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -73,7 +73,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"nome\": \"asd\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"arCondicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomadaRede\" : 10,\r\n    \"tomadaEnergia\" : 10\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,13 +94,16 @@
 					"response": []
 				},
 				{
-					"name": "update",
+					"name": "getByBloco",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "PUT",
+						"method": "GET",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": \"e8a2afbe-1bb0-4050-b98a-6696d9f8c72f\",\r\n    \"nome\": \"nova sala 2\",\r\n    \"bloco\": \"Bloco 1\",\r\n    \"arCondicionado\": true,\r\n    \"projetor\": true,\r\n    \"roteador\": true,\r\n    \"bloqueado\": false,\r\n    \"computadores\": 10,\r\n    \"capacidade\": 10,\r\n    \"tomadaRede\": 10,\r\n    \"tomadaEnergia\": 10\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -108,13 +111,41 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/salas/9cd5f683-7f2c-4f37-a797-0e8c08b08744",
+							"raw": "{{host}}/salas/bloco/Bloco 2",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"salas",
-								"9cd5f683-7f2c-4f37-a797-0e8c08b08744"
+								"bloco",
+								"Bloco 2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"nova sala 348\",\r\n    \"bloco\": \"Bloco 250\",\r\n    \"ar_condicionado\": true,\r\n    \"projetor\": false,\r\n    \"roteador\": true,\r\n    \"bloqueado\": false,\r\n    \"computadores\": 10,\r\n    \"capacidade\": 10,\r\n    \"tomada_rede\": 10,\r\n    \"tomada_energia\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/salas/609165b5-6c52-4605-8e13-03440f45357b",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"salas",
+								"609165b5-6c52-4605-8e13-03440f45357b"
 							]
 						}
 					},
@@ -141,6 +172,175 @@
 							],
 							"path": [
 								"salas",
+								"9cd5f683-7f2c-4f37-a797-0e8c08b08744"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ocupacoes",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sala_id\": \"f445cd25-f393-4273-95a4-686cd3c08ae7\",\r\n    \"descricao\": \"Ocupacao de teste\",\r\n    \"horario\": \"08:00\",\r\n    \"responsavel\" : \"Irineu\",\r\n    \"prof_responsavel\" : \"\",\r\n    \"dia_semana\" : \"Tuesday\",\r\n    \"data_inicio\" : \"2021-07-06\",\r\n    \"data_fim\" : \"2021-07-06\",\r\n    \"recusa_motivo\" : \"\",\r\n    \"status\" : \"alocado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/ocupacoes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ocupacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAll",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"asd\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"arCondicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomadaRede\" : 10,\r\n    \"tomadaEnergia\" : 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/ocupacoes",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ocupacoes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"asd\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"arCondicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomadaRede\" : 10,\r\n    \"tomadaEnergia\" : 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/ocupacoes/9cd5f683-7f2c-4f37-a797-0e8c08b08744",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ocupacoes",
+								"9cd5f683-7f2c-4f37-a797-0e8c08b08744"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getByIdSala",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/ocupacoes/sala/f445cd25-f393-4273-95a4-686cd3c08ae7?dateDay=2021-08-07",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ocupacoes",
+								"sala",
+								"f445cd25-f393-4273-95a4-686cd3c08ae7"
+							],
+							"query": [
+								{
+									"key": "dateDay",
+									"value": "2021-08-07"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"descricao\": \"Ocupacao de teste atualizado\",\r\n    \"frequencia\" : \"Semanalmente\",\r\n    \"data_fim\" : \"2021-07-06\",\r\n    \"responsavel\" : \"Irineu\",\r\n    \"prof_responsavel\" : \"\",\r\n    \"recusa_motivo\" : \"\",\r\n    \"tipo\" : \"alocacao\",\r\n    \"horario_id\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/ocupacoes/a3efab26-e795-432b-9fe1-7e4ef17f0c19",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ocupacoes",
+								"a3efab26-e795-432b-9fe1-7e4ef17f0c19"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"e8a2afbe-1bb0-4050-b98a-6696d9f8c72f\",\r\n    \"nome\": \"nova sala\",\r\n    \"bloco\" : \"Bloco 1\",\r\n    \"arCondicionado\" : true,\r\n    \"projetor\" : true,\r\n    \"roteador\" : true,\r\n    \"bloqueado\" : false,\r\n    \"computadores\" : 10,\r\n    \"capacidade\" : 10,\r\n    \"tomadaRede\" : 10,\r\n    \"tomadaEnergia\" : 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/ocupacoes/9cd5f683-7f2c-4f37-a797-0e8c08b08744",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"ocupacoes",
 								"9cd5f683-7f2c-4f37-a797-0e8c08b08744"
 							]
 						}
