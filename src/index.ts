@@ -1,8 +1,11 @@
 import express from 'express';
 import moment from 'moment';
+const cors = require('cors');
+
 const boot = require('./app/boot');
 
 const app: express.Application = express();
+app.use(cors());
 app.use(express.json());
 boot(app);
 app.listen(3000, () => {
