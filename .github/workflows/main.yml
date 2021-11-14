@@ -47,7 +47,7 @@ jobs:
       - run: echo Instaling dependencies!
       - run: npm install
       - run: echo Runing Tests With Jest!
-      - run: npm run jest --coverage
+      - run: npm run test:ci
 
       - name: Tests ✅
         if: ${{ success() }}
