@@ -203,7 +203,7 @@ describe("Ocupacoes", () => {
     };
     await createOcupacao.execute(object);
 
-    const result = await findByIdSala.execute({ id: "f445cd25-f393-4273-95a4-686cd3c08ae7" });
+    const result = await findByIdSala.execute({ id: "f445cd25-f393-4273-95a4-686cd3c08ae7@@" });
 
     expect(result).toEqual([object]);
   })
