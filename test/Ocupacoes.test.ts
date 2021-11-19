@@ -203,7 +203,7 @@ describe("Ocupacoes", () => {
     };
     await createOcupacao.execute(object);
 
-    const result = await findByIdSala.execute({ id: "f445cd25-f393-4273-95a4-686cd3c08ae7" });
+    const result = await findByIdSala.execute({ id: "f445cd25-f393-4273-95a4-686cd3c08ae7333333444" });
 
     expect(result).toEqual([object]);
   })
@@ -245,7 +245,7 @@ describe("Ocupacoes", () => {
       status: "alocado"
     });
     objects.push({
-      id: "21c4de3f-2076-4880-b48a-133a21a6864d44444444",
+      id: "21c4de3f-2076-4880-b48a-133a21a6864d",
       sala_id: "f445cd25-f393-4273-95a4-686cd3c08ae7",
       descricao: "Ocupacao de teste",
       horario: "10:00",
