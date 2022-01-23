@@ -7,6 +7,7 @@
     "test": "jest",
     "test:ci": "jest --clearCache && jest --coverage",
     "clearCache": "jest --clearCache",
+    "test:ci": "jest --clearCache && jest --coverage",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "dev": "ts-node-dev --respawn --ignore-watch node_modules -r dotenv/config ./src/index.ts",
     "build": "rimraf ./build && tsc",
