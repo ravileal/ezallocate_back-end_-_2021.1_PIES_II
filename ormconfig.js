@@ -8,5 +8,5 @@ module.exports = {
   synchronize: true,
   logging: false,
   entities: ["src/domain/model/**.ts"],
-  migrations: ["src/domain/migrations/*.ts"],
+  migrations: ["src/domain/repository/migrations/**.ts"],
 };
