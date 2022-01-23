@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:ci": "jest --clearCache && jest --coverage",
     "clearCache": "jest --clearCache",
     "typeorm": "ts-node-dev node_modules/typeorm/cli.js",
     "dev": "ts-node-dev --respawn --ignore-watch node_modules -r dotenv/config ./src/index.ts",
