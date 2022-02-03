@@ -4,8 +4,14 @@ pipeline {
       label 'master'
     }
   }
-  tools {nodejs "node"}
   stages {
+    stage('Example') {
+      steps {
+        nodejs {
+          sh 'node -v'
+        }
+      }
+    }
     stage('Example') {
       steps {
         sh 'export NVM_DIR="$HOME/.nvm"'
