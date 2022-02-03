@@ -4,7 +4,7 @@ pipeline {
       label 'master'
     }
   }
-  tools {nodejs "node"}
+  tools {nodejs "node14"}
   stages {
     stage('Example') {
       nodejs(nodeJSInstallationName: 'node14') {
