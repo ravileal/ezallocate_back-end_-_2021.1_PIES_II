@@ -2,7 +2,7 @@ pipeline {
   agent {
     node {
       label 'master'
-      export NVM_DIR="$HOME/.nvm"
+      sh 'export NVM_DIR="$HOME/.nvm"'
       sh '[ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"'
     }
   }
