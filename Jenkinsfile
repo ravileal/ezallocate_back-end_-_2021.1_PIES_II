@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('node') {
       steps {
-        nodejs {
+        nodejs('node') {
           sh 'node -v'
         }
       }
