@@ -3,12 +3,12 @@ pipeline {
     node {
       label 'master'
     }
-
   }
+  tools {nodejs "node"}
   stages {
-    stage('') {
+    stage('Example') {
       steps {
-        echo 'Ola mundo'
+        sh 'npm config ls'
       }
     }
     stage('Exemplo notificação Jenkins'){
