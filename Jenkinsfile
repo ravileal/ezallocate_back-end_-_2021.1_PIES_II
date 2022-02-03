@@ -5,11 +5,6 @@ pipeline {
     }
   }
   stages {
-    stage('node') {
-      steps {
-        sh 'node -v'
-      }
-    }
     stage('Example') {
       steps {
         sh 'export NVM_DIR="$HOME/.nvm"'
