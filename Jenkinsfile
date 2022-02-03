@@ -3,6 +3,10 @@ pipeline {
     node {
       label 'master'
     }
+    docker {
+      image 'node:14.18-alpine'
+      args '-p 3000:3000'
+    }
   }
   tools {nodejs "node"}
   stages {
