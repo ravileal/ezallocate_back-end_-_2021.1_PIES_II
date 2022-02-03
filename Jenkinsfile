@@ -4,7 +4,7 @@ pipeline {
       label 'master'
     }
   }
-  tools {nodejs "nodejs@14.48"}
+  tools {nodejs "node"}
   stages {
     stage('Example') {
       steps {
