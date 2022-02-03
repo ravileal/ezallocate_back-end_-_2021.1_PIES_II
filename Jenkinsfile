@@ -9,7 +9,7 @@ pipeline {
     stage('Example') {
       steps {
         sh 'export NVM_DIR="$HOME/.nvm"'
-        sh '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"'
+        sh '[ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"'
         sh 'npm -v'
         sh 'node -v'
       }
