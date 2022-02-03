@@ -8,10 +8,8 @@ pipeline {
   stages {
     stage('Example') {
       steps {
-        nodejs(nodeJSInstallationName: 'node') {
-          sh 'npm -v'
-          sh 'node -v'
-        }
+        sh 'npm -v'
+        sh 'node -v'
       }
     }
     stage('Exemplo notificação Jenkins'){
