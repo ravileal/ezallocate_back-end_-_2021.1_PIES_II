@@ -7,8 +7,9 @@ pipeline {
   tools {nodejs "node"}
   stages {
     stage('Example') {
-      steps {
-        sh 'npm config ls'
+      nodejs(nodeJSInstallationName: 'node14') {
+        sh 'npm -v'
+        sh 'node -v'
       }
     }
     stage('Exemplo notificação Jenkins'){
