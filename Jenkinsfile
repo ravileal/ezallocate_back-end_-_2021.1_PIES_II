@@ -4,10 +4,10 @@ pipeline {
       label 'master'
     }
   }
-  tools {nodejs "node14"}
+  tools {nodejs "node"}
   stages {
     stage('Example') {
-      nodejs(nodeJSInstallationName: 'node14') {
+      nodejs(nodeJSInstallationName: 'node') {
         sh 'npm -v'
         sh 'node -v'
       }
