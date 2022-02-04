@@ -6,9 +6,10 @@ pipeline {
     }
   }
   stages {
-    stage('docker sample') {
+    stage('node run install') {
       steps {
         sh 'npm -v'
+        sh 'npm install'
       }
     }
     stage('Example') {
