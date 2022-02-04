@@ -1,13 +1,16 @@
 pipeline {
   agent {
-    node {
-      label 'master'
-    }
-    environment { 
-      NVM_DIR="$HOME/.nvm"
+    docker {
+      image 'node:6-alpine'
+      args '-p 3000:3000'
     }
   }
   stages {
+    stage('docker sample') {
+      steps {
+        sh 'npm -v'
+      }
+    }
     stage('Example') {
       steps {
         sh '[ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"'
