@@ -8,15 +8,13 @@ pipeline {
   stages {
     stage('node run install') {
       steps {
-        sh 'npm -v'
-        sh 'npm install'
+        sh 'echo asdasd'
       }
     }
-    stage('Example') {
+    stage('node run install') {
       steps {
-        sh '[ -s "$NVM_DIR/nvm.sh" ] && \\. "$NVM_DIR/nvm.sh"'
         sh 'npm -v'
-        sh 'node -v'
+        sh 'npm install'
       }
     }
     stage('Exemplo notificação Jenkins'){
