@@ -31,6 +31,10 @@ jobs:
 
       - name: Tests ✅
         if: ${{ success() }}
+        env: 
+          GIT_BRANCH: development
+          GIT_COMMIT_SHA: ${{ github.sha }}
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
         run: |
           curl --request POST --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' --header 'content-type: application/json' --data '{
             "context": "tests",
