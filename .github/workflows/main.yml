@@ -32,8 +32,6 @@ jobs:
       - name: Tests ✅
         if: ${{ success() }}
         env: 
-          CI_BUILD_ID: ${{ github.run_id }}
-          CI_NAME: github
           GIT_BRANCH: development
           GIT_COMMIT_SHA: ${{ github.sha }}
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
