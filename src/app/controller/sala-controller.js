@@ -26,34 +26,58 @@ const createSala = async (req, res) => {
 };
 
 const getSala = async (req, res) => {
-  const result = await new FindAllSalas(repositorio).execute();
-  res.send(result);
+  try {
+    const result = await new FindAllSalas(repositorio).execute();
+    res.send(result);
+  } catch (error) {
+    res.status(500).send(error);
+  }
 };
 
 const getSalaById = async ({ params }, res) => {
-  const result = await new FindByIdSala(repositorio).execute(params);
-  res.send(result);
+  try {
+    const result = await new FindByIdSala(repositorio).execute(params);
+    res.send(result);
+  } catch (error) {
+    res.status(500).send(error)
+  }
 };
 
 const getSalaByNome = async ({ params }, res) => {
-  const result = await new FindByNomeSala(repositorio).execute(params);
-  res.send(result);
+  try {
+    const result = await new FindByNomeSala(repositorio).execute(params);
+    res.send(result);
+  } catch (error) {
+    res.status(500).send(error)
+  }
 };
 
 const getSalaByBloco = async ({ params }, res) => {
-  const result = await new FindByBloco(repositorio).execute(params);
-  res.send(result);
+  try {
+    const result = await new FindByBloco(repositorio).execute(params);
+    res.send(result);
+  } catch (error) {
+    res.status(500).send(error)
+  }
 };
 
 const updateSala = async ({ params, body }, res) => {
-  const entity = { ...body, ...params };
-  const result = await new UpdateSala(repositorio).execute(entity);
-  res.send(result);
+  try {
+    const entity = { ...body, ...params };
+    const result = await new UpdateSala(repositorio).execute(entity);
+    res.send(result);
+  } catch (error) {
+    res.status(500).send(error)
+  }
 };
 
 const deleteSala = async ({ params }, res) => {
-  const result = await new DeleteSala(repositorio).execute(params);
-  res.send(result);
+  try {
+    const result = await new DeleteSala(repositorio).execute(params);
+    res.send(result);
+  } catch (error) {
+    res.status(500).send(error)
+  }
 };
 
 module.exports = {

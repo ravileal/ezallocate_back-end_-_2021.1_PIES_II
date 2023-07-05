@@ -1,12 +1,15 @@
 import express from 'express';
-const cors = require('cors');
+import cors from 'cors';
 
-const boot = require('./app/boot');
+import boot from './app/boot';
 
-const app: express.Application = express();
-app.use(cors());
-app.use(express.json());
-boot(app);
-app.listen(3000, () => {
-  console.log('App is listening on port 3000! http://localhost:3000');
-});
+const start = (app: express.Application = express()) => {
+  app.use(cors());
+  app.use(express.json());
+  boot(app);
+  app.listen(3000, () => {
+    console.log('App is listening on port 3000! http://localhost:3000');
+  });
+};
+
+export default start;

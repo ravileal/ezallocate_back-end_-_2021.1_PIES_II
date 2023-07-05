@@ -7,10 +7,10 @@ export default class SalaRepository extends BaseRepository<Sala> {
   }
 
   findByNome(nome: string) {
-    return this.repository.find({ nome });
+    return this.repository.findOne({ nome });
   }
 
   findByBloco(bloco: string) {
-    return this.repository.find({ where : { bloco }, order : { nome : 'ASC' } });
+    return this.repository.find({ where: { bloco }, order: { nome: 'ASC' } });
   }
 }

@@ -11,7 +11,7 @@ export default class BaseRepository<T extends Base> {
     this.repository = BDConnection.getConnection().getRepository(target);
   }
 
-  async save<Type>(entity: Type) {
+  async save<Type>(entity: any) {
     return this.repository.save(entity);
   }
 
@@ -19,7 +19,7 @@ export default class BaseRepository<T extends Base> {
     return this.repository.find();
   }
 
-  findById(id: string) {
+  findById(id: any) {
     return this.repository.findOne(id);
   }
 

@@ -1,4 +1,4 @@
-module.exports = {
+ormConfig = {
   type: "mysql",
   host: process.env.DB_HOST,
   port: process.env.DB_PORT,
@@ -10,3 +10,5 @@ module.exports = {
   entities: ["src/domain/model/**.ts"],
   migrations: ["src/domain/repository/migrations/**.ts"],
 };
+
+module.exports = ormConfig
